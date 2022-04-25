@@ -14,12 +14,25 @@ function App() {
       </nav>
       <hr />
       <Routes>
-        <Route path="/home" element={<Home/>}/>
-        <Route path="/dashboard" element={<Dashboard/>}/>
-        <Route path="/about" element={<About/>}/>
+        <Route path="/home" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/dashboard" element={<Dashboard />}>
+          <Route path='/dashboard/child1' element={<Child1/>} />
+          <Route path='/dashboard/child2' element={<Child2/>} />
+        </Route>
       </Routes>
     </div>
   );
 }
 
+function Child1() {
+  return (
+    <div>我是孩子1</div>
+  )
+}
+function Child2() {
+  return (
+    <div>我是孩子2</div>
+  )
+}
 export default App;
