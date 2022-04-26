@@ -1,8 +1,9 @@
-import { Link, Routes, Route, Outlet } from 'react-router-dom'
-import Child1 from "../Child1"
-import Child2 from "../Child2"
+import { Link, Outlet, useLocation } from 'react-router-dom'
+import "../../css/App.css"
 
 function Dashboard() {
+    const location = useLocation()
+    console.log("location: ", location);
     return (
         <div>
             <h2>我是Dashboard组件: </h2>
@@ -15,8 +16,8 @@ function Dashboard() {
 function Menu() {
     return (
         <div>
-            <Link to="/dashboard/child1">child1</Link>
-            <Link to="/dashboard/child2">child2</Link>
+            <Link className='link' to="/dashboard/child1">child1</Link>
+            <Link className='link' to="/dashboard/child2">child2</Link>
         </div>
     )
 }
@@ -24,6 +25,7 @@ function Menu() {
 function Container () {
     return (
         <div>
+            <hr />
             <Outlet></Outlet>
         </div>
     )
