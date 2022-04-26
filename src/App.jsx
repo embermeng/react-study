@@ -13,7 +13,6 @@ function App() {
         <Link className='link' to="/home">Home</Link>
         <Link className='link' to="/dashboard">Dashboard</Link>
         <Link className='link' to="/about">About</Link>
-        
       </nav>
       <hr />
       <Routes>
